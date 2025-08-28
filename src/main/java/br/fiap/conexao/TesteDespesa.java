@@ -23,16 +23,28 @@ public class TesteDespesa {
 //        despesa.setData(LocalDate.parse("21/08/2025",mascara));
 //        dao.inserir(despesa);
 
-        List<Despesa> lista = dao.listar();
+//        List<Despesa> lista = dao.listar();
+//        for(Despesa despesa : lista){
+//            System.out.println(despesa.getId());
+//            System.out.println(despesa.getDescricao());
+//            System.out.println(despesa.getValor());
+//            System.out.println(despesa.getData());
+//            System.out.println(despesa.getCategoria().getId());
+//            System.out.println("==================================");
+//
+//        }
+
+        List<Despesa> lista = dao.relatorio();
         for(Despesa despesa : lista){
-            System.out.println(despesa.getId());
             System.out.println(despesa.getDescricao());
             System.out.println(despesa.getValor());
             System.out.println(despesa.getData());
-            System.out.println(despesa.getCategoria().getId());
+            System.out.println(despesa.getCategoria().getCategoria());
             System.out.println("==================================");
 
         }
+
+
 
 
     }

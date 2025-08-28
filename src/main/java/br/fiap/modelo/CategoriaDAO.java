@@ -15,13 +15,13 @@ public class CategoriaDAO {
     private String sql; //usada só para deixar o código mais limpo
 
     public void inserir(Categoria categoria){
-        sql = "insert into java_categoria values (?, ?)";
+        sql = "insert into java_categoria values (seqc.nextval, ?)";
 
         try(Connection connection = Conexao.conectar()) {
 
             ps = connection.prepareStatement(sql);
-            ps.setLong(1,categoria.getId());
-            ps.setString(2,categoria.getCategoria());
+            //ps.setLong(1,categoria.getId());
+            ps.setString(1,categoria.getCategoria());
             ps.execute();
 
         }
@@ -46,5 +46,7 @@ public class CategoriaDAO {
         }
         return lista;
     }
+
+
 
 }
